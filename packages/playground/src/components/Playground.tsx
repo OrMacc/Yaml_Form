@@ -12,6 +12,7 @@ import {
 } from '@rjsf/utils';
 
 import { samples } from '../samples';
+import orSchema from '../schemas/orSchema';
 import Header, { LiveSettings } from './Header';
 import DemoFrame from './DemoFrame';
 import ErrorBoundary from './ErrorBoundary';
@@ -29,7 +30,7 @@ export interface PlaygroundProps {
 
 export default function Playground({ themes, validators }: PlaygroundProps) {
   const [loaded, setLoaded] = useState(false);
-  const [schema, setSchema] = useState<RJSFSchema>(samples.Blank.schema as RJSFSchema);
+  const [schema, setSchema] = useState<RJSFSchema>(orSchema as RJSFSchema);
   const [uiSchema, setUiSchema] = useState<UiSchema>(samples.Blank.uiSchema);
   const [formData, setFormData] = useState<any>(samples.Blank.formData);
   const [extraErrors, setExtraErrors] = useState<ErrorSchema | undefined>();
