@@ -1,4 +1,5 @@
-{
+{"homepage": "https://<github_username>.github.io/<repository_name>",
+
   "name": "react-jsonschema-form",
   "private": true,
   "description": "monorepo for react-jsonschema-form and its themes",
