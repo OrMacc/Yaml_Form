@@ -8,6 +8,7 @@ export default function SubmitButton<T = any, S extends StrictRJSFSchema = RJSFS
   if (norender) {
     return null;
   }
+
   return (
     <div>
       <Button variant='primary' type='submit' {...submitButtonProps}>

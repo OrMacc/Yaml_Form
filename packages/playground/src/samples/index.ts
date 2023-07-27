@@ -30,9 +30,10 @@ import errorSchema from './errorSchema';
 import defaults from './defaults';
 import options from './options';
 import ifThenElse from './ifThenElse';
+import blank from './blank';
 
 export const samples = Object.freeze({
-  Blank: { schema: {}, uiSchema: {}, formData: {} },
+  Blank: blank, //{ schema: {}, uiSchema: {}, formData: {} },
   Simple: simple,
   'UI Options': options,
   Nested: nested,

@@ -6,7 +6,7 @@ interface SelectorProps {
 }
 
 export default function Selector({ onSelected }: SelectorProps) {
-  const [current, setCurrent] = useState<Sample>('Simple');
+  const [current, setCurrent] = useState<Sample>('Blank');
 
   function onLabelClick(label: Sample) {
     return (event: MouseEvent) => {

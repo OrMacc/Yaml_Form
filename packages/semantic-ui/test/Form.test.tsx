@@ -17,7 +17,7 @@ describe('semantic-ui specific tests', () => {
   test('field with special semantic options', () => {
     const schema: RJSFSchema = {
       title: 'A registration form',
-      description: 'A simple test theme form example.',
+      description: 'A simple test theme form exampleeeee.',
       type: 'object',
       required: ['test'],
       properties: {

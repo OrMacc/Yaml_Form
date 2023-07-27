@@ -19,6 +19,9 @@ import GeoPosition from './GeoPosition';
 import { ThemesType } from './ThemeSelector';
 import Editors from './Editors';
 
+import download from 'downloadjs';
+import yaml from 'js-yaml';
+
 export interface PlaygroundProps {
   themes: { [themeName: string]: ThemesType };
   validators: { [validatorName: string]: ValidatorType };
@@ -26,9 +29,9 @@ export interface PlaygroundProps {
 
 export default function Playground({ themes, validators }: PlaygroundProps) {
   const [loaded, setLoaded] = useState(false);
-  const [schema, setSchema] = useState<RJSFSchema>(samples.Simple.schema as RJSFSchema);
-  const [uiSchema, setUiSchema] = useState<UiSchema>(samples.Simple.uiSchema);
-  const [formData, setFormData] = useState<any>(samples.Simple.formData);
+  const [schema, setSchema] = useState<RJSFSchema>(samples.Blank.schema as RJSFSchema);
+  const [uiSchema, setUiSchema] = useState<UiSchema>(samples.Blank.uiSchema);
+  const [formData, setFormData] = useState<any>(samples.Blank.formData);
   const [extraErrors, setExtraErrors] = useState<ErrorSchema | undefined>();
   const [shareURL, setShareURL] = useState<string | null>(null);
   const [theme, setTheme] = useState<string>('default');
@@ -123,6 +126,13 @@ export default function Playground({ themes, validators }: PlaygroundProps) {
     console.log('submitted formData', formData);
     console.log('submit event', event);
     window.alert('Form submitted');
+    // Handle the submitted form data
+    console.log(formData);
+
+    // Convert form data to YAML
+    const yamlData = yaml.dump(formData);
+
+    download(yamlData, 'form-data.yaml', 'text/yaml');
   }, []);
 
   const templates: Partial<TemplatesType> = {};

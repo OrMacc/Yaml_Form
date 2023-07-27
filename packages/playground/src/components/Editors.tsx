@@ -124,7 +124,7 @@ export default function Editors({
   );
 
   return (
-    <div className='col-sm-7'>
+    <div className='col-sm-7' style={{ display: 'none' }}>
       <Editor title='JSONSchema' code={toJson(schema)} onChange={onSchemaEdited} />
       <div className='row'>
         <div className='col-sm-6'>

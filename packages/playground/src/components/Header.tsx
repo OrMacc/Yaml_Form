@@ -164,7 +164,7 @@ export default function Header({
   return (
     <div className='page-header'>
       <h1>react-jsonschema-form</h1>
-      <div className='row'>
+      <div className='row' style={{ display: 'none' }}>
         <div className='col-sm-6'>
           <Selector onSelected={load} />
         </div>
